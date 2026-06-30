@@ -1,0 +1,61 @@
+# Git
+.git
+.gitignore
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Environment Variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# Tests
+tests/
+.pytest_cache/
+
+# Documentation
+README.md
+docs/
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Local Storage
+uploads/
+temp/
+cache/
+vector_store/
+pdfs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.yml
