@@ -2,7 +2,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from beanie import init_beanie
 
 from app.core.config import settings
-from app.models import ALL_MODELS
+from app.models.init import ALL_MODELS
 from app.core.logger import logger
 
 client: AsyncIOMotorClient | None = None

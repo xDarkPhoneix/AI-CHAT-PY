@@ -88,7 +88,8 @@ temp/
 cache/
 vector_store/
 pdfs/
-
+app/uploads/*
+!app/uploads/.gitkeep
 # =========================
 # Secrets
 # =========================
