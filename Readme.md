@@ -2,25 +2,25 @@
 
 An end-to-end AI-powered PDF Chat application built with **FastAPI**, **MongoDB Atlas Vector Search**, **Google Gemini**, **LangChain**, **Celery**, and **Redis**.
 
-Upload PDF documents, automatically process and embed their contents in the background, and ask natural language questions to retrieve accurate answers from the uploaded document.
+Upload PDF documents, automatically process and embed their contents in the background, and ask natural language questions to retrieve accurate answers from the uploaded documents.
 
 ---
 
 # ✨ Features
 
-* 🔐 JWT Authentication
-* 📄 PDF Upload
-* ⚡ Background PDF Processing using Celery
-* ✂️ Intelligent Text Chunking with LangChain
-* 🧠 Google Gemini Embeddings
-* 🔍 MongoDB Atlas Vector Search
-* 🤖 Gemini 2.5 Flash for Question Answering
-* 🚀 Redis Response Caching
-* 🛡️ Redis-based Rate Limiting
-* 📊 Redis Insight Support
-* 🐳 Dockerized Development Environment
-* ☁️ MongoDB Atlas Integration
-* ⚙️ Production-Oriented Project Structure
+- 🔐 JWT Authentication
+- 📄 PDF Upload
+- ⚡ Background PDF Processing using Celery
+- ✂️ Intelligent Text Chunking with LangChain
+- 🧠 Google Gemini Embeddings
+- 🔍 MongoDB Atlas Vector Search
+- 🤖 Gemini 2.5 Flash for Question Answering
+- 🚀 Redis Response Caching
+- 🛡️ Redis-based Rate Limiting
+- 📊 Redis Insight Support
+- 🐳 Dockerized Development Environment
+- ☁️ MongoDB Atlas Integration
+- ⚙️ Production-Oriented Project Structure
 
 ---
 
@@ -85,42 +85,42 @@ JWT Authentication              Rate Limiter
 
 ### Backend
 
-* FastAPI
-* Python 3.12
-* Beanie ODM
-* Motor
-* Pydantic v2
+- FastAPI
+- Python 3.12
+- Beanie ODM
+- Motor
+- Pydantic v2
 
 ### AI
 
-* Google Gemini 2.5 Flash
-* Gemini Embedding Model
-* LangChain
-* PyMuPDF
+- Google Gemini 2.5 Flash
+- Gemini Embedding Model
+- LangChain
+- PyMuPDF
 
 ### Database
 
-* MongoDB Atlas
-* MongoDB Atlas Vector Search
+- MongoDB Atlas
+- MongoDB Atlas Vector Search
 
 ### Background Jobs
 
-* Celery
+- Celery
 
 ### Cache & Messaging
 
-* Redis
-* Redis Insight
+- Redis
+- Redis Insight
 
 ### Authentication
 
-* JWT
-* Passlib (bcrypt)
+- JWT
+- Passlib (bcrypt)
 
 ### DevOps
 
-* Docker
-* Docker Compose
+- Docker
+- Docker Compose
 
 ---
 
@@ -160,9 +160,9 @@ Users upload a PDF document through the API.
 
 The backend:
 
-* validates the file
-* stores metadata in MongoDB
-* queues a Celery task
+- validates the file
+- stores metadata in MongoDB
+- queues a Celery task
 
 ---
 
@@ -170,10 +170,10 @@ The backend:
 
 Celery worker:
 
-* extracts text using PyMuPDF
-* chunks the text using LangChain
-* generates embeddings using Gemini
-* stores embeddings in MongoDB Atlas
+- extracts text using PyMuPDF
+- chunks the text using LangChain
+- generates embeddings using Gemini
+- stores embeddings in MongoDB Atlas
 
 ---
 
@@ -223,10 +223,10 @@ When a user asks a question:
 
 Celery is responsible for:
 
-* PDF extraction
-* Chunk generation
-* Embedding generation
-* Storing vector embeddings
+- PDF extraction
+- Chunk generation
+- Embedding generation
+- Storing vector embeddings
 
 This keeps upload requests fast and responsive.
 
@@ -238,9 +238,9 @@ Redis-backed rate limiting protects the API.
 
 Example limits:
 
-* Login: **10 requests/minute**
-* Chat: **30 requests/minute**
-* Upload: **5 PDFs/hour**
+- Login: **10 requests/minute**
+- Chat: **30 requests/minute**
+- Upload: **5 PDFs/hour**
 
 ---
 
@@ -250,9 +250,9 @@ Repeated questions for the same document are cached.
 
 Benefits:
 
-* Faster responses
-* Reduced Gemini API calls
-* Lower operational costs
+- Faster responses
+- Reduced Gemini API calls
+- Lower operational costs
 
 ---
 
@@ -275,10 +275,10 @@ Each user query:
 
 Before starting, ensure you have:
 
-* Docker
-* Docker Compose
-* A MongoDB Atlas cluster
-* A Google Gemini API Key
+- Docker
+- Docker Compose
+- A MongoDB Atlas cluster
+- A Google Gemini API Key
 
 ---
 
@@ -336,10 +336,10 @@ docker ps
 
 You should see containers similar to:
 
-* `pdf-chat-api`
-* `pdf-chat-worker`
-* `pdf-chat-redis`
-* `pdf-chat-redis-insight`
+- `pdf-chat-api`
+- `pdf-chat-worker`
+- `pdf-chat-redis`
+- `pdf-chat-redis-insight`
 
 ---
 
@@ -427,7 +427,6 @@ docker compose down -v
 
 **Note:** MongoDB is hosted on **MongoDB Atlas** and is **not** part of the Docker Compose setup. Docker only runs the FastAPI application, Celery worker, Redis, and Redis Insight.
 
-
 # 🐳 Running Locally
 
 Clone the repository:
@@ -485,9 +484,8 @@ celery -A app.workers.celery_app:celery_app worker --loglevel=info
 
 Open:
 
-* API Docs: `http://localhost:8000/docs`
-* Redis Insight: `http://localhost:5540`
-
+- API Docs: `http://localhost:8000/docs`
+- Redis Insight: `http://localhost:5540`
 
 # 💻 Running the Frontend
 
@@ -511,26 +509,25 @@ npm run dev
 
 The frontend will be available at:
 
-* **Frontend:** http://localhost:3000
+- **Frontend:** http://localhost:3000
 
 Make sure the FastApi Backend/ Celery Worker or Docker Container backend is running before starting the frontend. By default, the frontend communicates with the backend API running at:
 
-* **Backend API:** http://localhost:8000
-
+- **Backend API:** http://localhost:8000
 
 ---
 
 # 📈 Future Improvements
 
-* Streaming AI responses
-* Conversation history
-* Source citations with page numbers
-* Hybrid search (keyword + vector)
-* OCR support for scanned PDFs
-* Cloud storage integration (Cloudinary/S3)
-* CI/CD with GitHub Actions
-* Kubernetes deployment
-* Monitoring with Prometheus & Grafana
+- Streaming AI responses
+- Conversation history
+- Source citations with page numbers
+- Hybrid search (keyword + vector)
+- OCR support for scanned PDFs
+- Cloud storage integration (Cloudinary/S3)
+- CI/CD with GitHub Actions
+- Kubernetes deployment
+- Monitoring with Prometheus & Grafana
 
 ---
 
@@ -538,16 +535,16 @@ Make sure the FastApi Backend/ Celery Worker or Docker Container backend is runn
 
 This project demonstrates experience with:
 
-* Retrieval-Augmented Generation (RAG)
-* FastAPI architecture
-* Background task processing
-* Vector databases
-* Semantic search
-* JWT authentication
-* Redis caching
-* Rate limiting
-* Docker
-* Production-ready backend design
+- Retrieval-Augmented Generation (RAG)
+- FastAPI architecture
+- Background task processing
+- Vector databases
+- Semantic search
+- JWT authentication
+- Redis caching
+- Rate limiting
+- Docker
+- Production-ready backend design
 
 ---
 
